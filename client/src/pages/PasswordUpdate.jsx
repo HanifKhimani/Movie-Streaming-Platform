@@ -64,7 +64,7 @@ const PasswordUpdate = () => {
           <Stack spacing={2}>
             <TextField
               type="password"
-              placeholder="password"
+              placeholder="Password"
               name="password"
               fullWidth
               value={form.values.password}
@@ -75,7 +75,7 @@ const PasswordUpdate = () => {
             />
             <TextField
               type="password"
-              placeholder="new password"
+              placeholder="New Password"
               name="newPassword"
               fullWidth
               value={form.values.newPassword}
@@ -86,7 +86,7 @@ const PasswordUpdate = () => {
             />
             <TextField
               type="password"
-              placeholder="confirm new password"
+              placeholder="Confirm New Password"
               name="confirmNewPassword"
               fullWidth
               value={form.values.confirmNewPassword}
