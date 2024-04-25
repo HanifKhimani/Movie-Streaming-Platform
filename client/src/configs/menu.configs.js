@@ -35,7 +35,7 @@ const main = [
 
 const user = [
   {
-    display: "favorites",
+    display: "favourite",
     path: "/favorites",
     icon: <FavoriteBorderOutlinedIcon />,
     state: "favorite"
