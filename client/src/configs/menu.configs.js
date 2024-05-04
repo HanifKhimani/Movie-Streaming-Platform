@@ -5,6 +5,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import RateReviewOutlinedIcon from "@mui/icons-material/RateReviewOutlined";
 import LockResetOutlinedIcon from "@mui/icons-material/LockResetOutlined";
+import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
 
 const main = [
   {
@@ -39,6 +40,12 @@ const user = [
     path: "/favorites",
     icon: <FavoriteBorderOutlinedIcon />,
     state: "favorite"
+  },
+  {
+    display: "watch later",
+    path: "/watchlater",
+    icon: <WatchLaterOutlinedIcon />,
+    state: "watchlater"
   },
   {
     display: "reviews",

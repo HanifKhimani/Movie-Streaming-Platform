@@ -1,6 +1,7 @@
 import HomePage from "../pages/HomePage";
 import PersonDetail from "../pages/PersonDetail";
 import FavoriteList from "../pages/FavoriteList";
+import WatchlaterList from "../pages/WatchlaterList";
 import MediaDetail from "../pages/MediaDetail";
 import MediaList from "../pages/MediaList";
 import MediaSearch from "../pages/MediaSearch";
@@ -15,6 +16,7 @@ export const routesGen = {
   mediaSearch: "/search",
   person: (id) => `/person/${id}`,
   favoriteList: "/favorites",
+  watchlaterList: "/watchlater",
   reviewList: "/reviews",
   passwordUpdate: "password-update"
 };
@@ -52,6 +54,15 @@ const routes = [
       </ProtectedPage>
     ),
     state: "favorites"
+  },
+  {
+    path: "/watchlater",
+    element: (
+      <ProtectedPage>
+        <WatchlaterList />
+      </ProtectedPage>
+    ),
+    state: "watchlater"
   },
   {
     path: "/reviews",

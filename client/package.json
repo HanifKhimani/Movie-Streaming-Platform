@@ -17,6 +17,7 @@
     "bad-words": "^3.0.4",
     "dayjs": "^1.11.7",
     "formik": "^2.2.9",
+    "lottie-react": "^2.4.0",
     "profanity-cleaner": "^0.0.3",
     "profanity-hindi": "^1.1.0",
     "profanity-list": "^1.0.7",
