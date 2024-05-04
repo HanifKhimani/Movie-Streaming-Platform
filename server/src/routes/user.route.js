@@ -5,6 +5,7 @@ import userController from "../controllers/user.controller.js";
 import requestHandler from "../handlers/request.handler.js";
 import userModel from "../models/user.model.js";
 import tokenMiddleware from "../middlewares/token.middleware.js";
+import watchlaterController from "../controllers/watchlater.controller.js";
 
 const router = express.Router();
 
@@ -96,6 +97,38 @@ router.delete(
   "/favorites/:favoriteId",
   tokenMiddleware.auth,
   favoriteController.removeFavorite
+);
+
+
+router.get(
+  "/watchlater",
+  tokenMiddleware.auth,
+  watchlaterController.getWatchLaterList
+);
+
+router.post(
+  "/watchlater",
+  tokenMiddleware.auth,
+  body("mediaType")
+    .exists().withMessage("mediaType is required")
+    .custom(type => ["movie", "tv"].includes(type)).withMessage("mediaType invalid"),
+  body("mediaId")
+    .exists().withMessage("mediaId is required")
+    .isLength({ min: 1 }).withMessage("mediaId can not be empty"),
+  body("mediaTitle")
+    .exists().withMessage("mediaTitle is required"),
+  body("mediaPoster")
+    .exists().withMessage("mediaPoster is required"),
+  body("mediaRate")
+    .exists().withMessage("mediaRate is required"),
+  requestHandler.validate,
+  watchlaterController.addToWatchLater
+);
+
+router.delete(
+  "/watchlater/:watchlaterId",
+  tokenMiddleware.auth,
+  watchlaterController.removeFromWatchLater
 );
 
 export default router;
